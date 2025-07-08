@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block titulo %}Editar Contacto{% endblock %}
+{% block contenido %}
+<h2>Modificar Contacto</h2>
+<form method="POST">
+    <input class="form-control mb-2" type="text" name="nombres" value="{{ contacto.nombres }}" required>
+    <input class="form-control mb-2" type="text" name="apellidos" value="{{ contacto.apellidos }}" required>
+    <input class="form-control mb-2" type="text" name="direccion" value="{{ contacto.direccion }}">
+    <input class="form-control mb-2" type="text" name="telefono" value="{{ contacto.telefono }}" required>
+    <input class="form-control mb-2" type="email" name="email" value="{{ contacto.email }}">
+    <select class="form-control mb-3" name="genero">
+        <option value="Hombre" {% if contacto.genero == 'Hombre' %}selected{% endif %}>Hombre</option>
+        <option value="Mujer" {% if contacto.genero == 'Mujer' %}selected{% endif %}>Mujer</option>
+    </select>
+    <button class="btn btn-success">Actualizar</button>
+</form>
+{% endblock %}

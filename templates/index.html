@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block titulo %}Mis Contactos{% endblock %}
+{% block contenido %}
+<h2>Mis Contactos</h2>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>#</th><th>Nombres</th><th>Apellidos</th><th>direccion</th><th>Teléfono</th><th>Email</th><th>Género</th><th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for c in contactos %}
+        <tr>
+            <td>{{ c.id }}</td>
+            <td>{{ c.nombres }}</td>
+            <td>{{ c.apellidos }}</td>
+            <td>{{ c.direccion }}</td>
+            <td>{{ c.telefono }}</td>
+            <td>{{ c.email }}</td>
+            <td>{{ c.genero }}</td>
+            <td>
+                <a class="btn btn-warning btn-sm" href="{{ url_for('contacto_update', id=c.id) }}">Editar</a>
+                <a class="btn btn-danger btn-sm" href="{{ url_for('contacto_delete', id=c.id) }}">Eliminar</a>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

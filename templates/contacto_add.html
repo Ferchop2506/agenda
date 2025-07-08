@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block titulo %}Nuevo Contacto{% endblock %}
+{% block contenido %}
+<h2>Agregar Contacto</h2>
+<form method="POST">
+    <input class="form-control mb-2" type="text" name="nombres" placeholder="Nombres" required>
+    <input class="form-control mb-2" type="text" name="apellidos" placeholder="Apellidos" required>
+    <input class="form-control mb-2" type="text" name="direccion" placeholder="Dirección">
+    <input class="form-control mb-2" type="text" name="telefono" placeholder="Teléfono" required>
+    <input class="form-control mb-2" type="email" name="email" placeholder="Correo Electrónico">
+    <select class="form-control mb-3" name="genero">
+        <option value="">Seleccione género</option>
+        <option value="Hombre">Hombre</option>
+        <option value="Mujer">Mujer</option>
+    </select>
+    <button class="btn btn-primary">Guardar</button>
+</form>
+{% endblock %}
